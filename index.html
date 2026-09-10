@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSH VAIDYA // MARKET INTELLIGENCE & GTM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --fg: #ffffff;
+            --accent: #E11D48; /* Ferrari Red */
+            --border: rgba(255,255,255,0.15);
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--fg); 
+            font-family: var(--font-main); 
+            overflow-x: hidden;
+            line-height: 1.1;
+        }
+
+        #cursor {
+            width: 20px;
+            height: 20px;
+            background: var(--fg);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+
+        .container { width: 100%; border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
+        .row { display: flex; border-bottom: 1px solid var(--border); width: 100%; }
+        .col { padding: 40px; border-right: 1px solid var(--border); }
+        .col:last-child { border-right: none; }
+
+        h1 { font-size: clamp(4rem, 12vw, 15rem); font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase; }
+        h2 { font-size: 1.5rem; font-family: var(--font-mono); text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+        p { font-size: 1.2rem; line-height: 1.5; max-width: 600px; }
+        .label { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; opacity: 0.5; margin-bottom: 10px; display: block; }
+
+        .hero { padding: 120px 40px 60px 40px; }
+        .hero-sub { justify-content: flex-end; text-align: right; padding-bottom: 80px; }
+
+        .ticker { 
+            background: var(--fg); 
+            color: var(--bg); 
+            padding: 15px 0; 
+            overflow: hidden; 
+            white-space: nowrap; 
+            border-top: 1px solid var(--fg);
+            border-bottom: 1px solid var(--fg);
+        }
+        .ticker-track { display: inline-block; animation: ticker 40s linear infinite; font-weight: 700; font-size: 1.2rem; text-transform: uppercase; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 1000px) { .work-grid { grid-template-columns: 1fr; } }
+        
+        .work-item { 
+            min-height: 500px;
+            border-right: 1px solid var(--border); 
+            border-bottom: 1px solid var(--border); 
+            padding: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .work-item:hover { background: var(--fg); color: var(--bg); }
+        .work-item h3 { font-size: 3.5rem; text-transform: uppercase; font-weight: 900; z-index: 2; line-height: 1; }
+        .work-desc { font-family: var(--font-mono); font-size: 0.9rem; margin-top: 20px; z-index: 2; opacity: 0.8; }
+        .stat-badge { font-size: 4rem; font-weight: 900; color: var(--accent); margin-bottom: 10px; }
+
+        .cap-item { padding: 40px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 40px; transition: 0.3s; }
+        .cap-item:hover { padding-left: 60px; color: var(--accent); }
+        .cap-num { font-family: var(--font-mono); opacity: 0.5; }
+        .cap-text { font-size: 3rem; font-weight: 700; text-transform: uppercase; }
+
+        .split { display: grid; grid-template-columns: 1fr 1.5fr; }
+        .poetry { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; padding: 60px; line-height: 1.3; }
+
+        .footer { padding: 100px 40px; background: var(--fg); color: var(--bg); text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 40px; margin-top: 40px; font-family: var(--font-mono); text-transform: uppercase; }
+        a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+
+        .accent-color { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<div id="cursor"></div>
+
+<div class="container">
+    <!-- Header -->
+    <div class="row" style="font-family: var(--font-mono); font-size: 0.7rem; padding: 20px 40px;">
+        <div style="flex: 1;">VOL. 2026 // INDIA</div>
+        <div style="flex: 1; text-align: center;">AYUSH VAIDYA PORTFOLIO</div>
+        <div style="flex: 1; text-align: right;" class="accent-color">AVAILABLE FOR FOUNDER'S OFFICE ROLES</div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <span class="label">Superpower: Market Intelligence</span>
+        <h1>Mapping The<br>Unseen Gaps.</h1>
+    </section>
+
+    <div class="row hero-sub">
+        <div class="col" style="border-right: none;">
+            <p>I synthesize market intelligence into GTM engines. Combining B.Tech (AI/ML) logic with the grit of high-stakes execution to navigate ambiguity. Currently at Masters’ Union.</p>
+        </div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="ticker">
+        <div class="ticker-track">
+            ₹30L+ DROPSHIPPING REVENUE /// ₹4L+ SINGLE DAY AT CYBERHUB /// 1ST RANK AMONG 60 TEAMS /// ₹6CR+ ARR CLOSED /// 130% ABM QUOTA /// INDIA COLD CHAIN SECTOR MAP /// &nbsp;
+            ₹30L+ DROPSHIPPING REVENUE /// ₹4L+ SINGLE DAY AT CYBERHUB /// 1ST RANK AMONG 60 TEAMS /// ₹6CR+ ARR CLOSED /// 130% ABM QUOTA /// INDIA COLD CHAIN SECTOR MAP /// &nbsp;
+        </div>
+    </div>
+
+    <!-- Work Grid -->
+    <section class="work-grid">
+        <!-- New Dropshipping Achievement -->
+        <div class="work-item">
+            <div>
+                <div class="stat-badge">#1</div>
+                <span class="label">Sprint // Dropshipping Challenge</span>
+                <h3>The CyberHub Sweep.</h3>
+            </div>
+            <p class="work-desc"><b>Intelligence:</b> Identified high-intent footfall patterns at DLF CyberHub to optimize offline sales. <br><br><b>Impact:</b> Clocked ₹4 Lakh+ revenue in a single day. Ranked 1st among 60+ teams. Reached ₹30 Lakh+ total revenue in 60 days (Top 3 overall).</p>
+        </div>
+
+        <div class="work-item">
+            <div>
+                <div class="stat-badge">₹6CR</div>
+                <span class="label">01 // Execution [SquadStack]</span>
+                <h3>The Enterprise Engine.</h3>
+            </div>
+            <p class="work-desc">Scaled outbound for 25+ enterprise accounts. Secured major logos including Kreditbee and NIIT. 130% quota attainment; ₹6Cr+ ARR contributed.</p>
+        </div>
+
+        <div class="work-item">
+            <div>
+                <div class="stat-badge">92%</div>
+                <span class="label">02 // Sector Research [Cold Chain]</span>
+                <h3>The Infrastructure Gap.</h3>
+            </div>
+            <p class="work-desc">Structural diagnosis of India’s $14Bn cold chain. Revealed that 92% of capital sits in the wrong link of the value chain. Strategic logic for investment.</p>
+        </div>
+
+        <div class="work-item">
+            <div>
+                <div class="stat-badge">₹9.3C</div>
+                <span class="label">03 // GTM Strategy [goSTOPS]</span>
+                <h3>The Demand Mismatch.</h3>
+            </div>
+            <p class="work-desc">Identified a segmentation mismatch between Gen Z and Millennials. Modeled ₹9.3 Cr in Y1 incremental revenue without changing the rate card.</p>
+        </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section>
+        <div class="row"><div class="col"><span class="label">Core Expertise</span></div></div>
+        <div class="cap-item">
+            <span class="cap-num">01</span>
+            <span class="cap-text">Market Intelligence</span>
+        </div>
+        <div class="cap-item">
+            <span class="cap-num">02</span>
+            <span class="cap-text">High-Velocity GTM</span>
+        </div>
+        <div class="cap-item">
+            <span class="cap-num">03</span>
+            <span class="cap-text">Revenue Operations</span>
+        </div>
+    </section>
+
+    <!-- Poetry -->
+    <section class="split">
+        <div class="col" style="background: var(--fg); color: var(--bg);">
+            <span class="label" style="opacity: 1;">The Stack</span>
+            <ul style="list-style: none; font-family: var(--font-mono); font-size: 0.9rem; margin-top: 20px;">
+                <li>HubSpot / CRM</li>
+                <li>SQL / Tableau</li>
+                <li>Python / ML</li>
+                <li>Apollo / LeadIQ</li>
+                <li>SEMrush / Ads</li>
+            </ul>
+        </div>
+        <div class="poetry">
+            "Market intelligence is the signal; poetry is the soul. I use both to navigate the chaos of growth."
+            <br><br>
+            <span style="font-size: 1.2rem; font-family: var(--font-main); font-style: normal; opacity: 0.5;">— Ayush Vaidya</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <span class="label" style="color: var(--bg); opacity: 0.5;">Next Step</span>
+        <a href="mailto:ayush.vaidya2028@mastersunion.org"><h1>Start The Engine.</h1></a>
+        
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/ayush2408/">LinkedIn</a>
+            <a href="#">Resume PDF</a>
+            <a href="#">X / Twitter</a>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mousedown', () => cursor.style.transform = 'scale(1.5)');
+    document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
+
+    const links = document.querySelectorAll('a, .work-item');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            cursor.style.width = '60px';
+            cursor.style.height = '60px';
+            cursor.style.opacity = '0.5';
+        });
+        link.addEventListener('mouseleave', () => {
+            cursor.style.width = '20px';
+            cursor.style.height = '20px';
+            cursor.style.opacity = '1';
+        });
+    });
+</script>
+</body>
+</html>
